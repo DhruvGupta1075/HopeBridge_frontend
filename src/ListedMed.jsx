@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaMoon, FaSun, FaHome, FaArrowLeft, FaPills, FaSearch, FaFilter, FaBuilding, FaCalendarAlt, FaPhone, FaTimes, FaUser, FaEnvelope, FaMapMarkerAlt, FaGraduationCap } from 'react-icons/fa';
+import { FaHome, FaArrowLeft, FaPills, FaSearch, FaFilter, FaBuilding, FaCalendarAlt, FaPhone, FaTimes, FaUser, FaEnvelope, FaMapMarkerAlt, FaGraduationCap } from 'react-icons/fa';
 import axios from 'axios';
 import logo from "./assets/logo1.png";
 import { server_url } from './config/url';
 
 function ListedMed() {
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
-
   const [medicines, setMedicines] = useState([]);
   const [filteredMedicines, setFilteredMedicines] = useState([]);
   const [donors, setDonors] = useState({});
@@ -22,21 +18,15 @@ function ListedMed() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
+    document.documentElement.classList.add("dark");
     loadMedicines();
     loadDonors();
-  }, [darkMode]);
+  }, []);
 
   useEffect(() => {
     filterMedicines();
   }, [medicines, searchTerm, filterBy, emailFilter]);
 
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem("darkMode", newDarkMode.toString());
-    document.documentElement.classList.toggle("dark", newDarkMode);
-  };
 
   const handleGoBack = () => {
     navigate(-1); // Go back to previous page
@@ -168,13 +158,13 @@ function ListedMed() {
   }).length;
 
   return (
-    <div className={`min-h-screen w-full overflow-x-hidden ${darkMode ? "dark bg-gray-900" : "bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50"} bg-fixed`}>
+    <div className="min-h-screen w-full overflow-x-hidden dark bg-gray-900">
       {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-pink-500 to-purple-600 dark:from-pink-700 dark:to-purple-800 shadow-lg sticky top-0 z-50 w-full">
+      <nav className="bg-gradient-to-r from-pink-700 to-purple-800 shadow-lg sticky top-0 z-50 w-full">
         <div className="w-full px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             <div className="flex items-center gap-2 md:gap-3">
-              <img src={logo} alt="NGO Logo" className="h-8 w-8 md:h-10 md:w-10 rounded-full" />
+              <img src={logo} alt="MediHope Logo" className="h-8 w-8 md:h-10 md:w-10 rounded-full" />
               <h1 className="text-lg md:text-2xl font-bold text-white">
                 <span className="hidden sm:inline">Available </span>Medicines
               </h1>

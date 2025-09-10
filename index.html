@@ -1,12 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon"  href="icon.png"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediHope</title>
+    <link rel="icon" href="icon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>MediHope - Bridging Hope to Those in Need</title>
+    <meta name="description" content="A compassionate platform connecting donors with underprivileged communities to provide essential resources and medicines." />
+    <meta name="keywords" content="medicine donation, healthcare, charity, NGO, underprivileged, community support" />
+    <meta name="author" content="MediHope Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MediHope - Bridging Hope to Those in Need" />
+    <meta property="og:description" content="Connect donors with underprivileged communities for essential resources and medicine donations." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MediHope" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MediHope - Bridging Hope to Those in Need" />
+    <meta name="twitter:description" content="Connect donors with underprivileged communities for essential resources and medicine donations." />
+    
+    <!-- Theme Color Meta Tags -->
+    <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1f2937" media="(prefers-color-scheme: dark)" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Preconnect to Font Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <script>
+      // Prevent flash of wrong theme
+      (function() {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('darkMode');
+        const isDark = savedTheme ? savedTheme === 'true' : prefersDark;
+        
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
   </head>
-  <body>
+  <body class="font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
