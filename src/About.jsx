@@ -30,9 +30,9 @@ export default function About() {
     <Layout>
       <Section className="pt-12">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">About MediHope</h1>
+          <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">About HopeBridge</h1>
           <p className="text-gray-300 text-lg">
-            MediHope connects compassionate donors with underprivileged communities, enabling safe and
+            HopeBridge connects compassionate donors with underprivileged communities, enabling safe and
             transparent donations of essential resources and medicines.
           </p>
         </div>

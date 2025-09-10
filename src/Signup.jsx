@@ -24,9 +24,9 @@ export default function Signup() {
       <nav className="fixed w-full z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center backdrop-blur-md bg-gray-900/90 shadow-lg border-b border-gray-700 transition-all duration-300">
         <div className="flex items-center gap-2 md:gap-3">
           <Link to="/" className="flex items-center gap-2 md:gap-3 hover:scale-105 transition-transform">
-            <img src={logo} alt="MediHope Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
+            <img src={logo} alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
             <h1 className="text-lg md:text-xl font-bold gradient-text">
-              MediHope
+              HopeBridge
             </h1>
           </Link>
         </div>
@@ -127,7 +127,7 @@ export default function Signup() {
         <div className="mt-12 md:mt-16 text-center max-w-3xl">
           <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
             <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-3 md:mb-4">
-              How MediHope Works
+              How HopeBridge Works
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
               <div className="text-center">

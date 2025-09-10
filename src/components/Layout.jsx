@@ -46,8 +46,8 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/src/assets/logo1.png" alt="MediHope Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
-              <h2 className="text-lg md:text-xl font-bold">MediHope</h2>
+              <img src="/src/assets/logo1.png" alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
+              <h2 className="text-lg md:text-xl font-bold">HopeBridge</h2>
             </div>
             <p className="text-sm opacity-90 max-w-md">
               Connecting compassion with need to build a better tomorrow.
@@ -82,7 +82,7 @@ function Footer() {
 
         <div className="border-t border-white/20 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-xs md:text-sm opacity-90">
           <p>
-            © {new Date().getFullYear()} <strong>MediHope</strong> — Made with <span className="text-pink-200">♥</span>
+            © {new Date().getFullYear()} <strong>HopeBridge</strong> — Made with <span className="text-pink-200">♥</span>
           </p>
         </div>
       </div>

@@ -82,7 +82,7 @@ export default function HomePage() {
       {/* Features Section */}
       <Section className="bg-gray-800/50">
         <SectionHeader 
-          title="How MediHope Works"
+          title="How HopeBridge Works"
           subtitle="Simple steps to make a meaningful difference in your community"
         />
         
@@ -134,7 +134,7 @@ export default function HomePage() {
       {/* Benefits Section */}
       <Section className="bg-gradient-to-br from-primary-900/10 to-secondary-900/10">
         <SectionHeader 
-          title="Why Choose MediHope?"
+          title="Why Choose HopeBridge?"
           subtitle="Built with trust, transparency, and impact in mind"
         />
         

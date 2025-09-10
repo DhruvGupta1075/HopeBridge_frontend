@@ -18,8 +18,8 @@ export function Navbar({ links = [], className }) {
         "backdrop-blur-md glass"
       )}>
         <Link to="/" className="flex items-center gap-2 md:gap-3 hover:opacity-90 focus:outline-none">
-          <img src={"/src/assets/logo1.png"} alt="MediHope Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
-          <span className="text-lg md:text-2xl font-bold gradient-text">MediHope</span>
+          <img src={"/src/assets/logo1.png"} alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
+          <span className="text-lg md:text-2xl font-bold gradient-text">HopeBridge</span>
         </Link>
 
         {/* Desktop Links */}

@@ -34,7 +34,7 @@ export default function Contact() {
     {
       icon: <FaEnvelope className="text-primary-500" />,
       title: "Email",
-      value: "hello@medihope.org",
+      value: "hello@HopeBridge.org",
     },
     {
       icon: <FaPhone className="text-green-500" />,
