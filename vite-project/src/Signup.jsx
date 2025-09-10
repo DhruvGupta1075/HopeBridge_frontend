@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaMoon, FaSun, FaArrowLeft, FaHeart, FaHandsHelping } from 'react-icons/fa';
-import logo from "./assets/logo1.png";
+// import logo from "./assets/logo1.png";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function Signup() {
       <nav className="fixed w-full z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
         <div className="flex items-center gap-2 md:gap-3">
           <Link to="/" className="flex items-center gap-2 md:gap-3 hover:scale-105 transition-transform">
-            <img src={logo} alt="MediHope Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
+            <img alt="MediHope Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
             <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               MediHope
             </h1>
