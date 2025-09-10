@@ -66,12 +66,12 @@ function Footer() {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">Connect</h3>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/i_.am._mahesh/" target="_blank" rel="noopener noreferrer"
+              <a target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center cursor-pointer hover:bg-white/20 transition hover:-translate-y-1"
                 title="Instagram">
                 <span className="text-xs">I</span>
               </a>
-              <a href="https://www.linkedin.com/in/mahesh-singla-999292324/" target="_blank" rel="noopener noreferrer"
+              <a target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center cursor-pointer hover:bg-white/20 transition hover:-translate-y-1"
                 title="LinkedIn">
                 <span className="text-xs">L</span>

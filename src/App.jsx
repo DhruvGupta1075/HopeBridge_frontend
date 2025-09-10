@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
+import About from './About';
+import Contact from './Contact';
 import Signup from './Signup';
 import NeedyProfileRegistration from './NeedyProfile';
 import NeedyDashboard from './NeedyDashboard';
@@ -14,6 +16,8 @@ function App() {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<Signup />} />
       
       {/* All Routes - No authentication required */}
