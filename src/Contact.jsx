@@ -64,7 +64,7 @@ export default function Contact() {
           {/* Contact Form */}
           <Card className="bg-gray-800 border border-gray-700">
             <CardHeader>
-              <CardTitle className="text-white">Send us a Message</CardTitle>
+              <CardTitle className="text-white font-sans">Send us a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -186,7 +186,7 @@ export default function Contact() {
 
             <Card className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
               <CardContent>
-                <h3 className="text-lg font-semibold mb-2">Ready to Make a Difference?</h3>
+                <h3 className="text-lg font-semibold mt-5 mb-1">Ready to Make a Difference?</h3>
                 <p className="mb-4 opacity-90">
                   Join our community of compassionate individuals working together to help those in need.
                 </p>
