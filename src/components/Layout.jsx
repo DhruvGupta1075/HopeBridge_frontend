@@ -26,7 +26,7 @@ export function Layout({ children, showNavbar = true, showFooter = true, classNa
         />
       )}
       
-      <main className={cn(showNavbar && "pt-16 md:pt-20")}>
+      <main className={cn(showNavbar && "pt-20 md:pt-24")}>
         {children}
       </main>
 
