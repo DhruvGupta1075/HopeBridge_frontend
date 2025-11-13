@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import HomePage from './HomePage';
 import About from './About';
 import Contact from './Contact';
@@ -10,9 +11,12 @@ import DonorDashboard from './DonorDashboard';
 import AvailMed from './AvailMed';
 import ListedMed from './ListedMed';
 import DonorDetails from './donordetails';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
+    <>
+    <ScrollToTop behavior="smooth" />
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<HomePage />} />
@@ -29,6 +33,7 @@ function App() {
       <Route path="/donate/medicine" element={<AvailMed />} />
       <Route path="/listed-medicines" element={<ListedMed />} />
     </Routes>
+    </>
   );
 }
 
