@@ -188,8 +188,8 @@ function DonorDetails() {
       <div className="pt-20 md:pt-24 pb-6 md:pb-10 px-3 md:px-6 flex items-center justify-center w-full">
         <form className="w-full max-w-5xl bg-white/10 dark:bg-gray-800/50 backdrop-blur-xl shadow-2xl p-4 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl space-y-4 md:space-y-6 border border-white/20 dark:border-gray-700/50 transition-all duration-300">
           <div className="text-center mb-6 md:mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700 bg-clip-text text-transparent mb-3 md:mb-4 flex items-center justify-center gap-2 md:gap-3">
-              🤝 Donor Registration
+            <h2 className="text-2xl md:text-4xl font-bold   mb-3 md:mb-4 flex items-center justify-center gap-2 ">
+              🤝 <span className="bg-gradient-to-r bg-clip-text font-bold text-transparent from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700">Donor Registration</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm md:text-base px-2">
               Join our community of donors and help make a difference in someone's life. Your contribution matters.
