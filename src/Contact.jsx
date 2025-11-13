@@ -132,7 +132,7 @@ export default function Contact() {
                   />
                 </div>
                 
-                <Button type="submit" variant="gradient" className="w-full">
+                <Button type="submit" className="w-full border-gray-500 border-1 hover:bg-gray-700">
                   Send Message
                 </Button>
               </form>
