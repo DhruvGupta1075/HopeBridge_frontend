@@ -98,7 +98,7 @@ export default function HomePage() {
               <CardContent className="text-center">
                 <CardDescription className="mb-6">{feature.description}</CardDescription>
                 <Link to={feature.href}>
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button size="sm" className="w-full border-gray-500 border-1 hover:bg-gray-700">
                     Learn More
                   </Button>
                 </Link>
@@ -118,7 +118,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <Card className="p-6">
+              <Card className="p-6 hover:scale-105 cursor-default">
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
