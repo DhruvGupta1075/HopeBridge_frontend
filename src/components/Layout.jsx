@@ -60,6 +60,7 @@ function Footer() {
               <li><Link to="/" className="text-sm hover:underline opacity-90 hover:opacity-100">Home</Link></li>
               <li><Link to="/signup" className="text-sm hover:underline opacity-90 hover:opacity-100">Sign Up</Link></li>
               <li><Link to="/about" className="text-sm hover:underline opacity-90 hover:opacity-100">About</Link></li>
+              <li><Link to="/contact" className="text-sm hover:underline opacity-90 hover:opacity-100">Contact</Link></li>
             </ul>
           </div>
 
