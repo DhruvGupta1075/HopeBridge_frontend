@@ -104,6 +104,7 @@ function DonorDetails() {
       });
 
       const data = await resp.json();
+      console.debug('saveDonor response:', data);
 
       // Show non-blocking feedback; show modal on success
       if (data.status === true) {
@@ -147,9 +148,10 @@ function DonorDetails() {
       });
 
       const data = await resp.json();
+      console.debug('donateMedicine response:', data);
 
       if (data.status === true) {
-        const msg = data.msg || 'Medicine donation saved';
+        const msg = data.msg || 'Medicine donation saved successfully and available to public';
         setMessage("✅ " + msg);
         setSuccessMessage(msg);
         setShowSuccessModal(true);
@@ -501,7 +503,7 @@ function DonorDetails() {
       
         {/* Success Modal */}
         {showSuccessModal && (
-          <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/50">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-full max-w-md mx-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Success</h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">{successMessage}</p>
