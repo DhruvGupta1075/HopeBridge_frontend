@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { server_url } from "./config/url";
+import { Link, useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+
 
 function DonorDetails() {
+    const navigate = useNavigate();
+  const handleGoBack = () => {
+      navigate(-1); // Go back to previous page
+  };
   // Common fields (used in both sections)
   const [commonData, setCommonData] = useState({
     emailid: "",
@@ -36,7 +43,7 @@ function DonorDetails() {
   const [message, setMessage] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-
+  
   function handleCommonChange(event) {
     const { name, value } = event.target;
     setCommonData({ ...commonData, [name]: value });
@@ -165,12 +172,40 @@ function DonorDetails() {
   }
 
   return (
+    <>
+    {/* Navbar */}
+          <nav className="fixed w-full z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Link to="/" className="flex items-center gap-2 md:gap-3 hover:scale-105 transition-transform">
+                <img src={"/icon.png"} alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
+                <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  HopeBridge
+                </h1>
+              </Link>
+            </div>
+            
+            <div className="flex items-center gap-2 md:gap-4">
+              <button
+                onClick={handleGoBack}
+                className="flex items-center gap-1 md:gap-2 text-gray-700 dark:text-gray-200 hover:text-indigo-500 transition hover:scale-105"
+              >
+                <FaArrowLeft className="text-xs md:text-sm" />
+                <span className="text-xs md:text-sm hidden sm:inline">Back</span>
+              </button>
+              <Link to="/" className="hidden md:flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-indigo-500 transition">
+                <FaArrowLeft className="text-sm" />
+                <span className="text-sm">Back to Home</span>
+              </Link>
+            
+            </div>
+          </nav>
     <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900 p-4">
+       
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-8 pt-6">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
-            HopeBridge Platform
+          <h1 className="text-4xl md:text-5xl mt-7 font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3 leading-normal">
+            Donor Registration
           </h1>
           <p className="text-gray-300 text-lg">
             Complete Donor Registration & Medicine Donation System
@@ -490,6 +525,7 @@ function DonorDetails() {
         </p>
       </div>
     </div>
+    </>
   );
 }
 
