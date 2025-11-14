@@ -12,6 +12,7 @@ import AvailMed from './AvailMed';
 import ListedMed from './ListedMed';
 import DonorDetails from './donordetails';
 import ScrollToTop from './components/ScrollToTop';
+import NgoDetails from './NgoDetails';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/donor/dashboard" element={<DonorDashboard />} />
       <Route path="/donate/medicine" element={<AvailMed />} />
       <Route path="/listed-medicines" element={<ListedMed />} />
+      <Route path="/ngo/register" element={<NgoDetails />} />
     </Routes>
     </>
   );

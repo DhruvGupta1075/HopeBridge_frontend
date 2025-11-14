@@ -71,7 +71,7 @@ function DonorDashboard() {
         <div className="w-full px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             <div className="flex items-center gap-2 md:gap-3">
-              <img src={logo} alt="HopeBridge Logo" className="h-8 w-8 md:h-10 md:w-10 rounded-full" />
+              <img src={'icon.png'} alt="HopeBridge Logo" className="h-8 w-8 md:h-10 md:w-10 rounded-full" />
               <h1 className="text-lg md:text-2xl font-bold gradient-text">Donor Dashboard</h1>
             </div>
             <div className="flex items-center gap-2 md:gap-4">
