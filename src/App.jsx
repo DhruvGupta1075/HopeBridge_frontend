@@ -13,6 +13,7 @@ import ListedMed from './ListedMed';
 import DonorDetails from './donordetails';
 import ScrollToTop from './components/ScrollToTop';
 import NGORegistration from './NGORegistration';
+import NGODashboard from './NGODashboard';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/ngo/register" element={<NGORegistration />} />
+      <Route path="/ngo/dashboard" element={<NGODashboard/>} />
       
       {/* All Routes - No authentication required */}
       <Route path="/needy/register" element={<NeedyProfileRegistration />} />
