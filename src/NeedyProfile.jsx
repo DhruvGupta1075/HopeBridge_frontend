@@ -277,7 +277,7 @@ export default function NeedyProfileRegistration() {
   }
 
   return (
-    <div className={`min-h-screen overflow-x-hidden ${darkMode ? "dark bg-gray-900" : "bg-gradient-to-br from-indigo-50 via-blue-50 to-violet-50"}`}>
+    <div className={`min-h-screen overflow-x-hidden`}>
       {/* Navbar */}
       <nav className="fixed w-full z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
         <div className="flex items-center gap-2 md:gap-3">
@@ -301,14 +301,6 @@ export default function NeedyProfileRegistration() {
             <FaArrowLeft className="text-sm" />
             <span className="text-sm">Back to Home</span>
           </Link>
-
-          <button
-            onClick={toggleDarkMode}
-            className="p-1 md:p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all"
-            title={darkMode ? "Light Mode" : "Dark Mode"}
-          >
-            {darkMode ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
-          </button>
         </div>
       </nav>
 
