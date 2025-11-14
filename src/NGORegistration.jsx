@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Building, Mail, Phone, MapPin, CreditCard, FileText, CheckCircle } from "lucide-react";
+import {Link, useNavigate} from 'react-router-dom';
+import { FaMoon, FaSun, FaArrowLeft } from 'react-icons/fa';
+import logo from "./assets/logo1.png";
+
 
 // Layout Component
 const Layout = ({ children }) => (
@@ -117,6 +121,11 @@ const Select = ({ label, options, error, ...props }) => (
 
 // Main NGO Registration Component
 export default function NGORegistration() {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+      navigate(-1); // Go back to previous page
+  };
+
   const [formData, setFormData] = useState({
     ngoName: "",
     registrationNumber: "",
@@ -335,9 +344,36 @@ export default function NGORegistration() {
   }
 
   return (
+    <div className="min-h-screen w-full overflow-x-hidden dark bg-gray-900">
+     {/* Navbar */}
+          <nav className="fixed w-full z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Link to="/" className="flex items-center gap-2 md:gap-3 hover:scale-105 transition-transform">
+                <img src={logo} alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
+                <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  HopeBridge
+                </h1>
+              </Link>
+            </div>
+            
+            <div className="flex items-center gap-2 md:gap-4">
+              <button
+                onClick={handleGoBack}
+                className="flex items-center gap-1 md:gap-2 text-gray-700 dark:text-gray-200 hover:text-indigo-500 transition hover:scale-105"
+              >
+                <FaArrowLeft className="text-xs md:text-sm" />
+                <span className="text-xs md:text-sm hidden sm:inline">Back</span>
+              </button>
+              <Link to="/" className="hidden md:flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-indigo-500 transition">
+                <FaArrowLeft className="text-sm" />
+                <span className="text-sm">Back to Home</span>
+              </Link>
+            
+            </div>
+          </nav>
     <Layout>
       <Section>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mt-3">
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -550,5 +586,6 @@ export default function NGORegistration() {
         </div>
       </Section>
     </Layout>
+    </div>
   );
 }
