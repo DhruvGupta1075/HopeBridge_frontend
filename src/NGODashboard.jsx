@@ -77,15 +77,15 @@ const Button = ({
 const Badge = ({ children, variant = "default" }) => {
   const variants = {
     default: "bg-gray-700 text-gray-200",
-    success: "bg-green-600/20 text-green-400",
-    warning: "bg-yellow-600/20 text-yellow-400",
-    danger: "bg-red-600/20 text-red-400",
-    info: "bg-blue-600/20 text-blue-400",
+    success: "bg-green-600/30 text-green-400",
+    warning: "bg-yellow-600/30 text-yellow-400",
+    danger: "bg-red-600/30 text-red-400",
+    info: "bg-blue-600/30 text-blue-400",
   };
 
   return (
     <span
-      className={`px-3 py-1 rounded-full text-xs font-semibold ${variants[variant]}`}
+      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold ${variants[variant]}`}
     >
       {children}
     </span>
@@ -241,6 +241,11 @@ export default function NGODashboard() {
     }
   };
 
+  const formatStatus = (status) => {
+    if (!status) return "";
+    return status.charAt(0).toUpperCase() + status.slice(1);
+  };
+
   return (
     <Layout>
       {/* Top Navigation */}
@@ -258,10 +263,6 @@ export default function NGODashboard() {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="relative p-2 text-gray-400 hover:text-white transition-colors">
-                <Bell className="w-6 h-6" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
               <button className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors">
                 <LogOut className="w-5 h-5" />
                 <span className="hidden md:inline">Logout</span>
@@ -327,15 +328,22 @@ export default function NGODashboard() {
                 </div>
 
                 {/* Recent Activity */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
                   {/* Recent Donations */}
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <h2 className="text-xl font-bold text-white">
                         Recent Donations
                       </h2>
-                      <Button size="sm" variant="outline">
-                        View All
+
+                      <Button
+                        key={"donations"}
+                        onClick={() => setActiveTab("donations")}
+                        size="sm"
+                        variant="outline"
+                      >
+                        {" "}
+                        View All{" "}
                       </Button>
                     </div>
                     <div className="space-y-3">
@@ -356,7 +364,7 @@ export default function NGODashboard() {
                             <Badge variant={getStatusColor(donation.status)}>
                               <div className="flex items-center gap-1">
                                 {getStatusIcon(donation.status)}
-                                {donation.status}
+                                {formatStatus(donation.status)}
                               </div>
                             </Badge>
                             <p className="text-gray-500 text-xs mt-1">
@@ -365,39 +373,6 @@ export default function NGODashboard() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </Card>
-
-                  {/* Quick Actions */}
-                  <Card className="p-6">
-                    <h2 className="text-xl font-bold text-white mb-4">
-                      Quick Actions
-                    </h2>
-                    <div className="space-y-3">
-                      <Button
-                        variant="primary"
-                        className="w-full justify-start"
-                        size="lg"
-                      >
-                        <Package className="w-5 h-5" />
-                        Record New Donation
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        className="w-full justify-start"
-                        size="lg"
-                      >
-                        <Users className="w-5 h-5" />
-                        Add Recipient
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        className="w-full justify-start"
-                        size="lg"
-                      >
-                        <FileText className="w-5 h-5" />
-                        View Inventory
-                      </Button>
                     </div>
                   </Card>
                 </div>
@@ -482,7 +457,7 @@ export default function NGODashboard() {
                               <Badge variant={getStatusColor(donation.status)}>
                                 <div className="flex items-center gap-1">
                                   {getStatusIcon(donation.status)}
-                                  {donation.status}
+                                  {formatStatus(donation.status)}
                                 </div>
                               </Badge>
                             </td>
