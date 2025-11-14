@@ -14,7 +14,6 @@ const Layout = ({ children }) => (
   </div>
 );
 
-// Section Component
 const Section = ({ children, className = "" }) => (
   <section className={`py-8 ${className}`}>
     {children}
@@ -298,28 +297,14 @@ export default function NGORegistration() {
   const handleSubmit = () => {
     
     if (validateForm()) {
-      console.log("Form submitted:", formData);
-      setSubmitted(true);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          ngoName: "",
-          registrationNumber: "",
-          email: "",
-          phone: "",
-          address: "",
-          city: "",
-          state: "",
-          pincode: "",
-          type: "",
-          description: "",
-          contactPerson: "",
-          contactPersonPhone: "",
-          website: ""
-        });
-      }, 3000);
+      // persist NGO data locally so dashboard can read it
+      try {
+        localStorage.setItem('ngo', JSON.stringify(formData));
+      } catch (e) {
+        console.warn('Unable to save NGO to localStorage', e);
+      }
+      // navigate to NGO dashboard to show saved data
+      navigate('/ngo/dashboard');
     }
   };
 

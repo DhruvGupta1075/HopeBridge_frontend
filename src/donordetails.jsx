@@ -509,7 +509,7 @@ function DonorDetails() {
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">{successMessage}</p>
               <div className="flex justify-end">
                 <button
-                  onClick={() => setShowSuccessModal(false)}
+                  onClick={() => { setShowSuccessModal(false); navigate('/'); }}
                   className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
                 >
                   OK
