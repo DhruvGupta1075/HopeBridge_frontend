@@ -29,12 +29,11 @@ function App() {
       {/* All Routes - No authentication required */}
       <Route path="/needy/register" element={<NeedyProfileRegistration />} />
       <Route path="/donor/signup" element={<DonorDetails />} />
-      <Route path="/needy/dashboard" element={<NeedyDashboard />} />
-      <Route path="/needy/list" element={<NeedyList />} />
-      <Route path="/donor/dashboard" element={<DonorDashboard />} />
+      {/* <Route path="/needy/dashboard" element={<NeedyDashboard />} /> */}
+      {/* <Route path="/needy/list" element={<NeedyList />} /> */}
+      {/* <Route path="/donor/dashboard" element={<DonorDashboard />} /> */}
       <Route path="/donate/medicine" element={<AvailMed />} />
       <Route path="/listed-medicines" element={<ListedMed />} />
-      <Route path="/ngo/register" element={<NgoDetails />} />
     </Routes>
     </>
   );
