@@ -134,7 +134,7 @@ export default function HomePage() {
       {/* Benefits Section */}
       <Section className="bg-gradient-to-br from-primary-900/10 to-secondary-900/10">
         <SectionHeader 
-          title="Why Choose HopeBridge?"
+          title="Why Choose HopeBridge?" 
           subtitle="Built with trust, transparency, and impact in mind"
         />
         
