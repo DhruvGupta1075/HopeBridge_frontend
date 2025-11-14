@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaHeart, FaHandsHelping } from 'react-icons/fa';
+import { FaArrowLeft, FaHeart, FaHandsHelping, FaBuilding } from 'react-icons/fa';
 import logo from "./assets/logo1.png";
 
 export default function Signup() {
@@ -10,12 +10,10 @@ export default function Signup() {
     document.documentElement.classList.add("dark");
   }, []);
 
-  const handleUserTypeSelection = (userType) => {
-    if (userType === 'recipient') {
-      navigate('/needy/register');
-    } else if (userType === 'donor') {
-      navigate('/donor/signup');
-    }
+  const handleUserTypeSelection = (type) => {
+    if (type === 'recipient') navigate('/needy/register');
+    if (type === 'donor') navigate('/donor/signup');
+    if (type === 'ngo') navigate('/ngo/ngo-details');
   };
 
   return (
@@ -25,12 +23,10 @@ export default function Signup() {
         <div className="flex items-center gap-2 md:gap-3">
           <Link to="/" className="flex items-center gap-2 md:gap-3 hover:scale-105 transition-transform">
             <img src={logo} alt="HopeBridge Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md" />
-            <h1 className="text-lg md:text-xl font-bold gradient-text">
-              HopeBridge
-            </h1>
+            <h1 className="text-lg md:text-xl font-bold gradient-text">HopeBridge</h1>
           </Link>
         </div>
-        
+
         <div className="flex items-center gap-2 md:gap-4">
           <Link to="/" className="flex items-center gap-1 md:gap-2 text-gray-200 hover:text-indigo-400 transition">
             <FaArrowLeft className="text-xs md:text-sm" />
@@ -42,8 +38,8 @@ export default function Signup() {
 
       {/* Main Content */}
       <div className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 flex flex-col items-center">
-        <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold gradient-text mb-4 md:mb-6">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold gradient-text mb-4">
             Join Our Community
           </h1>
           <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto">
@@ -51,109 +47,124 @@ export default function Signup() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl w-full">
-          {/* Needy Registration Card */}
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl w-full justify-items-center">
+
+          {/* NEEDY CARD */}
           <div 
             onClick={() => handleUserTypeSelection('recipient')}
-            className="group cursor-pointer bg-gray-800 p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl border border-gray-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl"
+            className="group cursor-pointer bg-gray-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-gray-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl w-full max-w-sm"
           >
             <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <FaHeart className="text-2xl md:text-3xl text-white" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaHeart className="text-3xl text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
-                I Need Help
-              </h3>
-              <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 leading-relaxed">
-                Register as someone in need of assistance. Get connected with donors who can provide essential items, medicines, and support.
+              <h3 className="text-2xl font-bold text-white mb-4">I Need Help</h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                Register as someone in need. Connect with donors who can provide essential items, medicines, and support.
               </p>
-              <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-400">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-                  <span>AI-powered Aadhaar verification</span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-                  <span>Quick profile setup</span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-                  <span>Access to donations</span>
-                </div>
-              </div>
-              <button className="mt-4 md:mt-6 w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white py-2.5 md:py-3 px-4 md:px-6 rounded-lg md:rounded-xl font-semibold shadow-lg transition-all group-hover:shadow-xl text-sm md:text-base">
+
+              <ul className="text-gray-400 text-sm space-y-2 text-left mx-auto w-max">
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>AI-powered Aadhaar verification</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>Quick profile setup</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-indigo-500"></span>Access to donations</li>
+              </ul>
+
+              <button className="mt-6 w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg transition-all">
                 Register as Needy
               </button>
             </div>
           </div>
 
-          {/* Donor Registration Card */}
+
+
+          {/* NGO CARD */}
           <div 
-            onClick={() => handleUserTypeSelection('donor')}
-            className="group cursor-pointer bg-gray-800 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-700 hover:border-pink-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl"
+            onClick={() => handleUserTypeSelection('ngo')}
+            className="group cursor-pointer bg-gray-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl w-full max-w-sm"
           >
             <div className="text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <FaHandsHelping className="text-2xl sm:text-3xl text-white" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaBuilding className="text-3xl text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
-                I Want to Help
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-                Become a donor and make a difference. Donate essential items, medicines, and resources to help those in need in your community.
+              <h3 className="text-2xl font-bold text-white mb-4">Register as NGO</h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                Register your organization, manage donation requests, and expand your impact through verified support.
               </p>
-              <div className="space-y-2 text-xs sm:text-sm text-gray-400">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  <span>Easy donation tracking</span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  <span>Impact monitoring</span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                  <span>Community connection</span>
-                </div>
+
+              <ul className="text-gray-400 text-sm space-y-2 text-left mx-auto w-max">
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-blue-500"></span>Verified NGO onboarding</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-blue-500"></span>Organize donation drives</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-blue-500"></span>Connect with volunteers</li>
+              </ul>
+
+              <button className="mt-6 w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white py-3 rounded-xl font-semibold shadow-lg transition-all">
+                Become a Registered NGO
+              </button>
+            </div>
+          </div>
+          {/* DONOR CARD */}
+          <div 
+            onClick={() => handleUserTypeSelection('donor')}
+            className="group cursor-pointer bg-gray-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-gray-700 hover:border-pink-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl w-full max-w-sm"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaHandsHelping className="text-3xl text-white" />
               </div>
-              <button className="mt-4 sm:mt-6 w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl font-semibold shadow-lg transition-all group-hover:shadow-xl text-sm sm:text-base">
+              <h3 className="text-2xl font-bold text-white mb-4">I Want To Help</h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                Become a donor and support those in need. Provide items, medicines, and essential resources.
+              </p>
+
+              <ul className="text-gray-400 text-sm space-y-2 text-left mx-auto w-max">
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-pink-500"></span>Easy donation tracking</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-pink-500"></span>Impact monitoring</li>
+                <li className="flex gap-2 items-center"><span className="w-2 h-2 rounded-full bg-pink-500"></span>Community connection</li>
+              </ul>
+
+              <button className="mt-6 w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-3 rounded-xl font-semibold shadow-lg transition-all">
                 Become a Donor
               </button>
             </div>
           </div>
+
         </div>
 
-        {/* Additional Information */}
-        <div className="mt-12 md:mt-16 text-center max-w-3xl">
-          <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-3 md:mb-4">
-              How HopeBridge Works
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
-              <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center">
-                  <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm md:text-base">1</span>
+        {/* HOW HOPEBRIDGE WORKS SECTION (unchanged) */}
+        <div className="mt-16 text-center max-w-3xl">
+          <div className="bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-700">
+            <h3 className="text-2xl font-bold text-white mb-4">How HopeBridge Works</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div>
+                <div className="w-12 h-12 mx-auto mb-3 bg-indigo-900 rounded-full flex items-center justify-center">
+                  <span className="text-indigo-400 font-bold">1</span>
                 </div>
-                <h4 className="font-semibold text-gray-800 dark:text-white mb-1 md:mb-2 text-sm md:text-base">Sign Up</h4>
-                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Choose your role and create your profile</p>
+                <h4 className="font-semibold text-white mb-1">Sign Up</h4>
+                <p className="text-gray-300 text-sm">Choose your role and create your profile</p>
               </div>
-              <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center">
-                  <span className="text-pink-600 dark:text-pink-400 font-bold text-sm md:text-base">2</span>
+
+              <div>
+                <div className="w-12 h-12 mx-auto mb-3 bg-pink-900 rounded-full flex items-center justify-center">
+                  <span className="text-pink-400 font-bold">2</span>
                 </div>
-                <h4 className="font-semibold text-gray-800 dark:text-white mb-1 md:mb-2 text-sm md:text-base">Connect</h4>
-                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Get matched with donors or recipients</p>
+                <h4 className="font-semibold text-white mb-1">Connect</h4>
+                <p className="text-gray-300 text-sm">Get matched with donors or recipients</p>
               </div>
-              <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 dark:text-green-400 font-bold text-sm md:text-base">3</span>
+
+              <div>
+                <div className="w-12 h-12 mx-auto mb-3 bg-green-900 rounded-full flex items-center justify-center">
+                  <span className="text-green-400 font-bold">3</span>
                 </div>
-                <h4 className="font-semibold text-gray-800 dark:text-white mb-1 md:mb-2 text-sm md:text-base">Impact</h4>
-                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Make a difference in your community</p>
+                <h4 className="font-semibold text-white mb-1">Impact</h4>
+                <p className="text-gray-300 text-sm">Make a difference in your community</p>
               </div>
+
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

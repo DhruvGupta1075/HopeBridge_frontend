@@ -395,14 +395,6 @@ export default function NGODashboard() {
                         className="w-full justify-start"
                         size="lg"
                       >
-                        <Download className="w-5 h-5" />
-                        Generate Report
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        className="w-full justify-start"
-                        size="lg"
-                      >
                         <FileText className="w-5 h-5" />
                         View Inventory
                       </Button>
