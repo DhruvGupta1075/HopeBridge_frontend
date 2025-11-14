@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/src/assets/logo1.png"
+                src="/icon.png"
                 alt="HopeBridge Logo"
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full"
               />
