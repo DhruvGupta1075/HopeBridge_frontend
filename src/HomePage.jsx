@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHeart, FaHandsHelping, FaPills, FaUserPlus, FaChartLine, FaShieldAlt } from "react-icons/fa";
+import { FaHeart, FaHandsHelping, FaBuilding, FaUserPlus, FaChartLine, FaShieldAlt } from "react-icons/fa";
 import { Layout } from "./components/Layout";
 import { Section, SectionHeader } from "./components/Section";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/Card";
@@ -15,16 +15,16 @@ export default function HomePage() {
       href: "/needy/register"
     },
     {
+      title: "NGO Registration",
+      description: "Register your NGO, get verified, and join our platform to support communities in need.",
+      icon: <FaBuilding className="w-8 h-8 text-secondary-500" />,
+      href: "/ngo/register"
+    },
+    {
       title: "Become a Donor", 
       description: "Join our community of compassionate donors and make a meaningful impact in someone's life.",
       icon: <FaHandsHelping className="w-8 h-8 text-primary-500" />,
       href: "/donor/signup"
-    },
-    {
-      title: "Medicine Donations",
-      description: "Donate unused medicines safely and track their journey to those who need them most.",
-      icon: <FaPills className="w-8 h-8 text-secondary-500" />,
-      href: "/donate/medicine"
     }
   ];
 
