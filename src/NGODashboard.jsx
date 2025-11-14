@@ -96,6 +96,10 @@ const Badge = ({ children, variant = "default" }) => {
 export default function NGODashboard() {
   const [activeTab, setActiveTab] = useState("overview");
   const [searchQuery, setSearchQuery] = useState("");
+  const [ngoInfo, setNgoInfo] = useState(null);
+  const [donations, setDonations] = useState([]);
+  const [donors, setDonors] = useState([]);
+  const [needyList, setNeedyList] = useState([]);
 
   // Mock data
   const ngoData = {
@@ -214,6 +218,31 @@ export default function NGODashboard() {
       lastReceived: "2024-11-07",
     },
   ];
+
+  // Load persisted data from localStorage to show real entries when available
+  React.useEffect(() => {
+    try {
+      const storedNgo = localStorage.getItem('ngo');
+      if (storedNgo) setNgoInfo(JSON.parse(storedNgo));
+    } catch (e) {
+      console.warn('failed to parse ngo from localStorage', e);
+    }
+
+    try {
+      const storedDonations = localStorage.getItem('donations');
+      if (storedDonations) setDonations(JSON.parse(storedDonations));
+    } catch (e) {}
+
+    try {
+      const storedDonors = localStorage.getItem('donors');
+      if (storedDonors) setDonors(JSON.parse(storedDonors));
+    } catch (e) {}
+
+    try {
+      const storedNeedy = localStorage.getItem('needyList');
+      if (storedNeedy) setNeedyList(JSON.parse(storedNeedy));
+    } catch (e) {}
+  }, []);
 
   const getStatusColor = (status) => {
     switch (status) {
