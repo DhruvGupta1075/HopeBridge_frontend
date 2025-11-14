@@ -13,7 +13,7 @@ export default function Signup() {
   const handleUserTypeSelection = (type) => {
     if (type === 'recipient') navigate('/needy/register');
     if (type === 'donor') navigate('/donor/signup');
-    if (type === 'ngo') navigate('/ngo/ngo-details');
+    if (type === 'ngo') navigate('/ngo/register');
   };
 
   return (
@@ -103,6 +103,7 @@ export default function Signup() {
               </button>
             </div>
           </div>
+
           {/* DONOR CARD */}
           <div 
             onClick={() => handleUserTypeSelection('donor')}
