@@ -34,6 +34,7 @@ function App() {
       <Route path="/donor/dashboard" element={<DonorDashboard />} />
       <Route path="/donate/medicine" element={<AvailMed />} />
       <Route path="/listed-medicines" element={<ListedMed />} />
+      <Route path="/ngo/register" element={<NgoDetails />} />
     </Routes>
     </>
   );
