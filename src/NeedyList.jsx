@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaMoon, FaSun, FaHome, FaArrowLeft, FaUser, FaPhone, FaMapMarkerAlt, FaIdCard, FaUsers } from 'react-icons/fa';
+import {FaHome, FaArrowLeft, FaUser, FaPhone, FaMapMarkerAlt, FaIdCard, FaUsers } from 'react-icons/fa';
 import axios from 'axios';
 import logo from "./assets/logo1.png";
 import { server_url } from './config/url';
 
 function NeedyList() {
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
 
   const [needyList, setNeedyList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
@@ -24,13 +21,6 @@ function NeedyList() {
   useEffect(() => {
     filterList();
   }, [needyList, searchTerm]);
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem("darkMode", newDarkMode.toString());
-    document.documentElement.classList.toggle("dark", newDarkMode);
-  };
 
   const handleGoBack = () => {
     navigate(-1); // Go back to previous page
@@ -103,13 +93,6 @@ function NeedyList() {
                 <FaHome className="text-xs md:text-sm" />
                 <span className="hidden sm:inline">Home</span>
               </Link>
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all min-h-[44px] min-w-[44px]"
-                title={darkMode ? "Light Mode" : "Dark Mode"}
-              >
-                {darkMode ? <FaSun className="text-sm md:text-base" /> : <FaMoon className="text-sm md:text-base" />}
-              </button>
             </div>
           </div>
         </div>
